@@ -12,6 +12,7 @@ class particle{
         this.update();
         this.display();
         this.checkEdge();
+        this.disappear();
     }
     
     update(){
@@ -28,10 +29,13 @@ class particle{
           this.switch = true;
           this.velocity.y *= -1;
         }
-        if(this.switch == true){
-            this.lifespan -= 2;
-          }
     }
+
+    disappear(){
+        if(this.switch ==true){
+          this.lifespan -= 5;
+        }
+      }
 
         
     
