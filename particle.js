@@ -9,7 +9,9 @@ class particle{
     }
     
     run(){
+        if(mouseIsPressed){
         this.update();
+        }
         this.display();
         this.checkEdge();
         this.disappear();
