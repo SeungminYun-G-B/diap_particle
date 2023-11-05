@@ -5,11 +5,13 @@ class particle{
         this.position = position.copy();
         this.lifespan = random(255);
         this.w = random(1,20);
+        this.switch = off;
     }
     
     run(){
         this.update();
         this.display();
+        this.checkEdge();
     }
     
     update(){
@@ -17,6 +19,22 @@ class particle{
         this.position.add(this.velocity);
         this.lifespan -= 2;
     }
+
+    checkEdge(){
+        if(this.position.x <0 || this.position.x > width){
+          this.switch = on;
+          this.velocity.x *= -1;
+        }
+        if(this.position.y <0 || this.position.y > height){
+          this.switch = on;
+          this.velocity.y *= -1;
+        }
+        if(this.switch ==on){
+            this.lifespan -= 2;
+          }
+    }
+
+        
     
     display(){
         noStroke();
