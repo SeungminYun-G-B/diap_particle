@@ -3,7 +3,8 @@ class particle{
         this.acceleration = createVector(0, 0.05);
         this.velocity = createVector(random(-1, 1), random(-1, 0));
         this.position = position.copy();
-        this.lifespan = 255;
+        this.lifespan = random(255);
+        this.w = random(1,20);
     }
     
     run(){
@@ -18,10 +19,9 @@ class particle{
     }
     
     display(){
-        stroke(200, this.lifespan);
-        strokeWeight(2);
+        noStroke();
         fill(127, this.lifespan);
-        ellipse(this.position.x, this.position.y, 12, 12);
+        ellipse(this.position.x, this.position.y, this.w, this.w);
     }
     
     isDead(){
