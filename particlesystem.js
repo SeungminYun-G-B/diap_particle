@@ -5,7 +5,7 @@ class particlesystem{
     }
     
     addParticle(){
-        this.particles.push(new Particle(this.origin));
+        this.particles.push(new particle(this.origin));
     }
     
     run(){
