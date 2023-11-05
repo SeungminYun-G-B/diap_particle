@@ -5,7 +5,7 @@ class particle{
         this.position = position.copy();
         this.lifespan = random(255);
         this.w = random(1,20);
-        this.switch = off;
+        this.switch = false;
     }
     
     run(){
@@ -17,19 +17,18 @@ class particle{
     update(){
         this.velocity.add(this.acceleration);
         this.position.add(this.velocity);
-        this.lifespan -= 2;
     }
 
     checkEdge(){
         if(this.position.x <0 || this.position.x > width){
-          this.switch = on;
+          this.switch = true;
           this.velocity.x *= -1;
         }
         if(this.position.y <0 || this.position.y > height){
-          this.switch = on;
+          this.switch = true;
           this.velocity.y *= -1;
         }
-        if(this.switch ==on){
+        if(this.switch == true){
             this.lifespan -= 2;
           }
     }
