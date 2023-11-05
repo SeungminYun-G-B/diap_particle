@@ -20,19 +20,8 @@ class particle{
       }
     
     update(){
-      if(mouseIsPressed){
-        let mouse = createVector(mouseX,mouseY);
-    let dir = p5.Vector.sub(mouse,this.pos);
-    dir.setMag(0.2);
-    
-    this.acceleration=dir;
-    this.velocity.add(this.acc);
-    this.velocity.limit(4);
-    this.position.add(this.vel);
-      }else{
         this.velocity.add(this.acceleration);
         this.position.add(this.velocity);
-      }
     }
 
     checkEdge(){
