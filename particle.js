@@ -16,6 +16,10 @@ class particle{
         this.checkEdge();
         this.disappear();
     }
+
+    applyForce(aForce){
+        this.acceleration.add(aForce);
+      }
     
     update(){
         this.velocity.add(this.acceleration);

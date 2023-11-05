@@ -7,6 +7,12 @@ class particlesystem{
         this.origin = position.copy();
     }
     
+    add(aForce){
+        for(let p of this.particles){
+            p.applyForce(aForce);
+          }
+    }
+
     addParticle(){
         this.particles.push(new particle(this.origin));
     }
